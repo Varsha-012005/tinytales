@@ -101,30 +101,35 @@ Ollama installed and running
 Apache/Nginx web server
 
 Step 1: Clone & Setup
-git clone https://github.com/yourusername/tinytales.git
-cd tinytales
+   git clone https://github.com/yourusername/tinytales.git
+   cd tinytales
+   
 Step 2: Create Database
 # Create database and tables
-mysql -u root -p < docs/schema.sql
+  mysql -u root -p < docs/schema.sql
+  
 Step 3: Configure Database
-Edit includes/config.php:
+   Edit includes/config.php:
+   
+   $host = 'localhost';
+   $db   = 'tiny_tales';
+   $user = 'root';
+   $pass = 'your_password';
 
-$host = 'localhost';
-$db   = 'tiny_tales';
-$user = 'root';
-$pass = 'your_password';
 Step 4: Install & Start Ollama
 
-# Install Ollama from https://ollama.ai
-# Pull TinyLlama model
-ollama pull tinyllama
+  # Install Ollama from https://ollama.ai
+  # Pull TinyLlama model
+  ollama pull tinyllama
 
 # Ensure Ollama is running (default: http://localhost:11434)
+
 Step 5: Configure Python Path
-In public/dashboard.php, update the Python path:
+   In public/dashboard.php, update the Python path:
 
 
 $pythonPath = 'C:\Users\YourUsername\AppData\Local\Programs\Python\Python311\python.exe';
+
 Step 6: Set Permissions
 
 # Create necessary directories
